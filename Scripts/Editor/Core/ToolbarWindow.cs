@@ -18,7 +18,7 @@ namespace BrunoMikoski.Toolbar
         private readonly List<IOnSelectionChange> selectionChangeItems = new List<IOnSelectionChange>();
 
 
-        [MenuItem("Window/ToolBar")]
+        [MenuItem("Tools/Toolbar/Open")]
         private static void Init()
         {
             ToolbarWindow window = (ToolbarWindow) GetWindow(typeof(ToolbarWindow));
