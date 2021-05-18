@@ -36,31 +36,12 @@ namespace BrunoMikoski.Toolbar
 
                     EditorSceneManager.SaveScene(scene);
                 }
-                
-                string[] scriptableObjectsGUIDs = AssetDatabase.FindAssets($"t:{nameof(ScriptableObject)}");
-                int scriptableObjectsCount = scriptableObjectsGUIDs.Length;
-                for (int i = 0; i < scriptableObjectsCount; i++)
-                {
-                    EditorUtility.DisplayProgressBar("Saving Scriptable Object",
-                        $"Saving Scriptable Object ({i + 1}/{scriptableObjectsCount})...",
-                        (float) i / scriptableObjectsCount);
-                    
-                    ScriptableObject scriptableObject = AssetDatabase.LoadAssetAtPath<ScriptableObject>(
-                        AssetDatabase.GUIDToAssetPath(scriptableObjectsGUIDs[i]));
-
-                    if (scriptableObject == null)
-                        continue;
-                    
-                    EditorUtility.SetDirty(scriptableObject);
-                }
             }
             finally
             {
                 EditorUtility.ClearProgressBar();
             }
-            
             AssetDatabase.SaveAssets();
-
         }
     }
 }

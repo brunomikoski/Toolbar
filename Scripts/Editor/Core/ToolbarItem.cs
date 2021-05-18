@@ -9,7 +9,6 @@ namespace BrunoMikoski.Toolbar
     {
         protected ToolbarSettings.ToolbarItemSettings Settings => ToolbarSettings.GetInstance().GetSettings(this);
 
-
         public bool Enabled => Settings.Enabled;
         public abstract string Name { get; }
         public abstract string Description { get; }
