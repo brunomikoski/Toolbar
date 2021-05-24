@@ -1,7 +1,7 @@
 # Toolbar
 
 <p align="center">
-    <a href="https://github.com/brunomikoski/Toolbar/blob/main/LICENSE.md">
+    <a href="https://github.com/brunomikoski/Toolbar/blob/main/LICENSE">
 		<img alt="GitHub license" src ="https://img.shields.io/github/license/brunomikoski/Toolbar" />
 	</a>
 
