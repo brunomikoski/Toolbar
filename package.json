@@ -1,7 +1,7 @@
 {
   "name": "com.brunomikoski.toolbar",
   "displayName": "Toolbar",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "unity": "2018.3",
   "description": "Create a customizable toolbar for easy access of features. Default features\n-Selection History\n-Save Project\n-Timescale Toggle\n-Objects Shortcut",
   "keywords": [

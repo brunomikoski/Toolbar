@@ -1,4 +1,5 @@
-﻿using JetBrains.Annotations;
+﻿using System;
+using JetBrains.Annotations;
 using UnityEditor;
 using UnityEngine;
 
@@ -11,7 +12,7 @@ namespace BrunoMikoski.Toolbar
 
         public bool Enabled => Settings.Enabled;
         public abstract string Name { get; }
-        public abstract string Description { get; }
+        public virtual string Description => String.Empty;
         
         public virtual int InitialOrder => 0;
 

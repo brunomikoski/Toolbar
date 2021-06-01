@@ -85,6 +85,7 @@ namespace BrunoMikoski.Toolbar
             if (item.isAsset)
             {
                 Selection.activeObject = item.SelectionObject;
+                EditorGUIUtility.PingObject(item.SelectionObject);
 
                 if (item.openAsset)
                     AssetDatabase.OpenAsset(item.SelectionObject);
@@ -100,6 +101,7 @@ namespace BrunoMikoski.Toolbar
             }
 
             Selection.activeObject = selection;
+            EditorGUIUtility.PingObject(selection);
         }
     }
 

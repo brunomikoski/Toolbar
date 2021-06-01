@@ -13,7 +13,7 @@ namespace BrunoMikoski.Toolbar
         public override string Description => "Save all the open scenes and the project";
         public override int InitialOrder => 0;
 
-        protected override GUIContent ButtonContent => new GUIContent("Save All");
+        protected override GUIContent ButtonContent => new GUIContent("Save All", EditorGUIUtility.IconContent("d_SaveAs", "Save All").image);
 
         protected override void OnClick()
         {

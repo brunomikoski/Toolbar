@@ -5,7 +5,8 @@ namespace BrunoMikoski.Toolbar
 {
     public abstract class ButtonToolbarItemBase : ToolbarItem
     {
-        protected abstract GUIContent ButtonContent { get; }
+        public override string Name => GetType().Name;
+        protected virtual GUIContent ButtonContent => new GUIContent(Name);
 
         public sealed override float Width => EditorStyles.toolbarButton.CalcSize(ButtonContent).x;
 

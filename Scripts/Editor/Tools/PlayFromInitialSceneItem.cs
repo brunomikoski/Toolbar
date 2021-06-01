@@ -51,7 +51,6 @@ namespace BrunoMikoski.Toolbar
 					        string initialScenePath = AssetDatabase.GetAssetPath(sceneAsset);
 					        EditorInitialSceneLoader.InitialScenePath = initialScenePath;
 					        EditorInitialSceneLoader.InitialSceneName = sceneAsset.name;
-					        Debug.Log($"Initial scene set to: {sceneAsset.name}");
 					        break;
 				        }
 			        }
@@ -64,7 +63,7 @@ namespace BrunoMikoski.Toolbar
 	        {
 		        EditorGUI.BeginChangeCheck();
 		       
-		        string playFromScene = $"Play from {EditorInitialSceneLoader.InitialSceneName} scene";
+		        string playFromScene = $"Play from {EditorInitialSceneLoader.InitialSceneName}";
 		        bool playFromLoading =
 			        EditorGUI.ToggleLeft(rect, playFromScene, EditorInitialSceneLoader.LoadInitialOnPlay, labelStyle);
 		        if (EditorGUI.EndChangeCheck())
@@ -104,22 +103,22 @@ namespace BrunoMikoski.Toolbar
 
         public static bool LoadInitialOnPlay
         {
-	        get => EditorPrefs.GetBool(PLAY_FROM_INITIAL_SCENE_KEY, false);
-	        set => EditorPrefs.SetBool(PLAY_FROM_INITIAL_SCENE_KEY, value);
+	        get => EditorPrefs.GetBool($"{Application.productName}{PLAY_FROM_INITIAL_SCENE_KEY}", false);
+	        set => EditorPrefs.SetBool($"{Application.productName}{PLAY_FROM_INITIAL_SCENE_KEY}", value);
         }
 
         public static string InitialScenePath
         {
-	        get => EditorPrefs.GetString(INITIAL_SCENE_PATH_KEY);
-	        set => EditorPrefs.SetString(INITIAL_SCENE_PATH_KEY, value);
+	        get => EditorPrefs.GetString($"{Application.productName}{INITIAL_SCENE_PATH_KEY}");
+	        set => EditorPrefs.SetString($"{Application.productName}{INITIAL_SCENE_PATH_KEY}", value);
         }
 
-        public static bool HasInitialScene => !string.IsNullOrEmpty(EditorPrefs.GetString(INITIAL_SCENE_PATH_KEY));
+        public static bool HasInitialScene => !string.IsNullOrEmpty(InitialScenePath);
 
         public static string InitialSceneName
         {
-	        get => EditorPrefs.GetString(INITIAL_SCENE_NAME_KEY);
-	        set => EditorPrefs.SetString(INITIAL_SCENE_NAME_KEY, value);        
+	        get => EditorPrefs.GetString($"{Application.productName}{INITIAL_SCENE_NAME_KEY}");
+	        set => EditorPrefs.SetString($"{Application.productName}{INITIAL_SCENE_NAME_KEY}", value);        
         }
 
         private static void OnPlayModeChanged(PlayModeStateChange obj)
